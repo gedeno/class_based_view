@@ -8,12 +8,17 @@
 <body>
     <form action="/" method="post">
         {%csrf_token%}
-        <textarea name = "body"></textarea>
+        <label for=""> task name:</label>
+        <input type="text" name="task_name"><br>
+        <label for=""> task description:</label>
+        <input type="text" name="task_description"><br>
+        <label for=""> task completed:</label>
+        <input type="checkbox" name="complited"><br>
         <button type="submit">Add Task</button>
     </form>
     <div>
         {% for  task in tasks %}
-            <div>{{ task.body}}</div>
+            <div>{{ task.task_name}} - {{ task.task_description}} - {{ task.complited}}</div>
         {% endfor %}
     </div>
 </body>
