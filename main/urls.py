@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('',views.Tasklist.as_view(),name= 'tasks'),
+    path('base/',views.Feach.as_view(),name='base')
 
 ]
