@@ -4,4 +4,4 @@ from django.db import models
 class Task(models.Model):
     task_name = models.CharField(max_length=300)
     task_description = models.TextField(max_length=300)
-    complited = models.BooleanField(default=False)
+    completed = models.BooleanField(default=False)
