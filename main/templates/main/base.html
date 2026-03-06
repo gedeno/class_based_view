@@ -9,7 +9,12 @@
     {%for taks in base %}
         <h1>{{taks.task_name}}</h1>
         <h1>{{taks.task_description}}</h1>
-        <h1>{{taks.completed}}</h1>
+        {% if taks.completed %}
+            <input type="checkbox" checked>
+        {%else%}
+            <input type="checkbox" >
+            {%endif%}
+
     {%endfor%}
 </body>
 </html>
