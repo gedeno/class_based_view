@@ -8,12 +8,7 @@
 <body>
     <form action="/" method="post">
         {%csrf_token%}
-        <label for=""> task name:</label>
-        <input type="text" name="task_name"><br>
-        <label for=""> task description:</label>
-        <input type="text" name="task_description"><br>
-        <label for=""> task completed:</label>
-        <input type="checkbox" name="completed"><br>
+        {{form}}
         <button type="submit">Add Task</button>
     </form>
     <div>
