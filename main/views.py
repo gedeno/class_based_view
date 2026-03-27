@@ -25,5 +25,5 @@ class Feach3(ListView):
     template_name = 'main/display2.html'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['task_lists'] = Task.objects.all()
+        context["Tasks"] = Task.objects.all()
         return context
