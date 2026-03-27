@@ -7,8 +7,10 @@
 </head>
 <body>
     <div>
-        <h1>taks :{{Tasks.task_name}}</h1>
-        <h1>descriptions : {{Tasks.task_description}}</h1>
+    {% for tasks in Tasks %}
+        <h1>taks :{{tasks.task_name}}</h1>
+        <h1>descriptions : {{tasks.task_description}}</h1>
+    {% endfor %}
     </div>
 </body>
 </html>
