@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for ppl in base %}
+        <h1>{{ppl.title}}</h1>
+        <h1>{{ppl.description}}</h1>
+        {% if ppl.completed %}
+            <input type="checkbox" checked>
+        {%else%}
+            <input type="checkbox" >
+        {%endif%}
+    {% endfor %}
+</body>
+</html>

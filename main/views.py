@@ -14,3 +14,8 @@ class Feach(ListView):
     model = Task
     context_object_name = "base"
     template_name = "main/base.html"
+class Feach2(ListView):
+    model = Task
+    template_name = 'main/display.html'
+    def get_queryset(self):
+        return Task.objects.all()
