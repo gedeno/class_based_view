@@ -29,4 +29,10 @@ class Feach3(ListView):
         context = super().get_context_data(**kwargs)
         context["Tasks"] = Task.objects.all()
         return context
-class 
+class ContactFormview(FormView):
+    template_name = "main/contact.html"
+    form_class = contactForm
+    success_url = "/"
+    def form_valid(self, form):
+        form.send_email()
+        return super().form_valid(form)

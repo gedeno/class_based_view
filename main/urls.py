@@ -6,6 +6,7 @@ urlpatterns = [
     path('base/',views.Feach.as_view(),name='base'),
     path('display/',views.Feach2.as_view(),name='display'),
     path('disp/',views.Feach3.as_view(),name="disp"),
+    path('forms/',views.ContactFormview.as_view() ,name='forms'),
 
 
 ]
