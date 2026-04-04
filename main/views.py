@@ -1,6 +1,8 @@
 from django.shortcuts import render,redirect
 from .models import Task 
 from .forms import FormTask
+from django.views.generic.edit import FormView
+from . forms import contactForm
 # Create your views here.
 from django.views import View
 from django.views.generic import CreateView, ListView
@@ -27,3 +29,4 @@ class Feach3(ListView):
         context = super().get_context_data(**kwargs)
         context["Tasks"] = Task.objects.all()
         return context
+class 
