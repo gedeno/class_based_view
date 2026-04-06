@@ -9,8 +9,13 @@
     <form action="" method="post">
         {% csrf_token %}
         <label for="">task complition :</label>
-        <input type="checkbox" name="complet" id="">
-        {{work.completed}}
+        
+        
+        {% if work.completed == True %}
+            <input type="checkbox" checked name="complet" id="">
+        {% elif work.completed == False%}
+            <input type="checkbox"   name="complet" id="">
+        {% endif %}
       
     </form>
 </body>
