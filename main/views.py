@@ -5,13 +5,15 @@ from django.views.generic.edit import FormView
 from . forms import contactForm
 # Create your views here.
 from django.views import View
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView ,DeleteView
 
 class Tasklist(CreateView):
     model = Task
     form_class = FormTask
     template_name = "main/home.html"
     success_url = "/"
+
+
 class Feach(ListView): 
     model = Task
     context_object_name = "base"
@@ -36,3 +38,16 @@ class ContactFormview(FormView):
     def form_valid(self, form):
         form.send_email()
         return super().form_valid(form)
+class Dataupdate(DeleteView):
+    model = Task
+    template_name = 'main/completed.html'
+    context_object_name = 'work'
+    def get_object(self):
+        return Task.objects.get(id=self.kwargs['pk'])
+    
+    def post(self, request, *args, **kwargs):
+        complet = request.POST.get('complet')
+        user = self.get_object()
+        user.completed = complet
+        user.save()
+        return redirect('home')
