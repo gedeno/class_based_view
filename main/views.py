@@ -44,7 +44,6 @@ class Dataupdate(DeleteView):
     context_object_name = 'work'
     def get_object(self):
         return Task.objects.get(id=self.kwargs['pk'])
-    
     def post(self, request, *args, **kwargs):
         complet = request.POST.get('complet')
         user = self.get_object()
