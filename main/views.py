@@ -45,8 +45,9 @@ class Dataupdate(DeleteView):
     def get_object(self):
         return Task.objects.get(id=self.kwargs['pk'])
     def post(self, request, *args, **kwargs):
-        complet = request.POST.get('complet')
+        complet = request.POST.get('complet') == "on"
         user = self.get_object()
         user.completed = complet
         user.save()
-        return redirect('home')
+        return redirect('/')
+    
